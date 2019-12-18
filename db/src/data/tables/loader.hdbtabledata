@@ -1,0 +1,90 @@
+{
+	"format_version": 1,
+	"imports": [
+		{
+			"target_table": "sap.db.data.tables::core.addresses",
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "sap.db.data.files::addresses.csv",
+				"has_header": true,
+				"type_config" : { 
+			          "delimiter" : "," 
+			        } 
+				},
+			"import_settings": {
+				"include_filter":[],
+				"import_columns": [
+						"addressId",
+						"city",
+						"postalCode",
+						"street",
+						"building",
+						"country",
+						"region",
+						"addressType",
+						"validityStartDate",
+						"validityEndDate",
+						"latitude",
+						"longitude",
+						"point"
+						]
+				}
+		
+		},
+		{
+			"target_table": "sap.db.data.tables::core.attachments",
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "sap.db.data.files::attachments.csv",
+				"has_header": true,
+				"type_config" : { 
+			          "delimiter" : "," 
+			        } 				
+				},
+			"import_settings": {
+				"include_filter":[],
+				"import_columns": [
+			        	"noteId",      
+			            "linkId",      
+			            "type",    
+			            "title",      
+			            "createdat",   
+			            "description", 
+			            "size"
+			            ]
+				}
+		
+		},
+		{
+			"target_table": "sap.db.data.tables::core.businessPartner",
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "sap.db.data.files::businessPartner.csv",
+				"has_header": true,
+				"type_config" : { 
+			          "delimiter" : "," 
+			        } 				
+				},
+			"import_settings": {
+				"include_filter":[],
+				"import_columns": [
+						"partnerid",
+						"partnerrole",
+						"emailaddress",
+						"phonenumber",
+						"faxnumber",
+						"webaddress",
+						"addressesAddressid",
+						"companyname",
+						"legalform", 
+						"historyCreatedbyEmployeeid",
+						"historyCreatedat",
+						"historyChangedbyEmployeeid",
+						"historyChangedat",
+						"currency"
+			            ]
+				}
+		
+		}		
+	]
+}

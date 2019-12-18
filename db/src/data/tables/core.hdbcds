@@ -1,0 +1,50 @@
+namespace sap.db.data.tables;
+
+context core {
+
+    /*@@layout{"layoutInfo":{}}*/
+    entity addresses {
+        key addressId         : Integer;
+            city              : String(24);
+            postalCode        : String(8);
+            street            : String(31);
+            building          : Integer;
+            country           : String(2);
+            region            : String(4);
+            addressType       : Integer;
+            validityStartDate : LocalDate;
+            validityEndDate   : LocalDate;
+            latitude          : Decimal(32, 14);
+            longitude         : Decimal(32, 14);
+            point             : String(37);
+    };
+
+    /*@@layout{"layoutInfo":{}}*/
+    entity attachments {
+        key noteId      : Integer not null;
+            linkId      : Integer64;
+            type        : String(3);
+            title       : String(15);
+            createdat   : LocalDate;
+            description : String(100);
+            size        : String(6);
+    };
+
+    /*@@layout{"layoutInfo":{}}*/
+    entity businessPartner {
+        key "partnerid"                  : Integer not null;
+            "partnerrole"                : Integer;
+            "emailaddress"               : String(38);
+            "phonenumber"                : Integer64;
+            "faxnumber"                  : String(5);
+            "webaddress"                 : String(37);
+            "addressesAddressid"		 : Integer;
+            "companyname"                : String(36);
+            "legalform"                  : String(9);
+            "historyCreatedbyEmployeeid" : Integer;
+            "historyCreatedat"           : LocalDate;
+            "historyChangedbyEmployeeid" : Integer;
+            "historyChangedat"           : LocalDate;
+            "currency"                   : String(3);
+            };
+};
